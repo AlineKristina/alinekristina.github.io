@@ -33,6 +33,14 @@ export const getTimeAgo = (date: Date): string => {
   return formatDate(date)
 }
 
+export const formatDateForInput = (date: Date): string => {
+  return date.toISOString().split('T')[0]
+}
+
+export const formatTimeForInput = (date: Date): string => {
+  return date.toISOString().split('T')[1].slice(0, 5)
+}
+
 // Local storage utilities
 export const saveToStorage = <T>(key: string, data: T): void => {
   try {

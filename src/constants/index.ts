@@ -89,8 +89,20 @@ export const STORAGE_KEYS = {
   CHAT_MESSAGES: 'guild_chat_messages',
   WIKI_PAGES: 'guild_wiki_pages',
   USER_SETTINGS: 'user_settings',
-  CALCULATOR_HISTORY: 'calculator_history'
+  CALCULATOR_HISTORY: 'calculator_history',
+  GUILD_EVENTS: 'guild_events'
 } as const
+
+// Event types
+export const EVENT_TYPES = [
+  { id: 'guild', label: 'Guild Event', color: 'bg-blue-500' },
+  { id: 'raid', label: 'Raid/Dungeon', color: 'bg-red-500' },
+  { id: 'pvp', label: 'PvP/WoE', color: 'bg-purple-500' },
+  { id: 'social', label: 'Social', color: 'bg-green-500' },
+  { id: 'training', label: 'Training', color: 'bg-yellow-500' },
+  { id: 'meeting', label: 'Guild Meeting', color: 'bg-gray-500' },
+  { id: 'other', label: 'Other', color: 'bg-indigo-500' }
+] as const
 
 // Application constants
 export const APP_CONSTANTS = {

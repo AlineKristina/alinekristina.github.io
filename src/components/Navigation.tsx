@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Home, MessageSquare, Users, BookOpen, Calculator } from 'lucide-react'
+import { Home, MessageSquare, Users, BookOpen, Calculator, Calendar } from 'lucide-react'
 
 const Navigation = () => {
   const location = useLocation()
@@ -9,6 +9,7 @@ const Navigation = () => {
     { path: '/forum', icon: MessageSquare, label: 'Forum' },
     { path: '/chat', icon: Users, label: 'Chat' },
     { path: '/wiki', icon: BookOpen, label: 'Wiki' },
+    { path: '/calendar', icon: Calendar, label: 'Calendar' },
     { path: '/calculator', icon: Calculator, label: 'Calculator' },
   ]
 

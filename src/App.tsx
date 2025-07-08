@@ -5,6 +5,7 @@ import Forum from './pages/Forum'
 import Chat from './pages/Chat'
 import Wiki from './pages/Wiki'
 import Calculator from './pages/Calculator'
+import Calendar from './pages/Calendar'
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/chat" element={<Chat />} />
           <Route path="/wiki" element={<Wiki />} />
           <Route path="/calculator" element={<Calculator />} />
+          <Route path="/calendar" element={<Calendar />} />
         </Routes>
       </Layout>
     </Router>

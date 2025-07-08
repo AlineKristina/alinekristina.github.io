@@ -1,6 +1,9 @@
 import { Shield, Swords, Users } from 'lucide-react'
+import { useUserTracking } from '../hooks/useUserTracking'
 
 const Header = () => {
+  const { activeUsers, isTracking } = useUserTracking();
+
   return (
     <header className="bg-gray-800 border-b border-gray-700 py-4">
       <div className="container mx-auto px-4">
@@ -15,7 +18,12 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-gray-300">
               <Users className="w-5 h-5" />
-              <span className="text-sm">45 Members Online</span>
+              <span className="text-sm">
+                {activeUsers} Member{activeUsers !== 1 ? 's' : ''} Online
+                {!isTracking && (
+                  <span className="text-gray-500 ml-1">(inactive)</span>
+                )}
+              </span>
             </div>
             <div className="flex items-center space-x-2 text-gray-300">
               <Swords className="w-5 h-5" />

@@ -1,4 +1,5 @@
 import { Calendar, Crown, Trophy, AlertCircle } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import About from '../components/About'
 
 const Home = () => {
@@ -37,7 +38,15 @@ const Home = () => {
 
       {/* Recent Activity */}
       <div className="bg-gray-800 rounded-lg p-6">
-        <h2 className="text-xl font-bold text-white mb-4">Recent Activity</h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-bold text-white">Recent Activity</h2>
+          <Link 
+            to="/calendar" 
+            className="text-red-400 hover:text-red-300 text-sm font-medium"
+          >
+            View Calendar →
+          </Link>
+        </div>
         <div className="space-y-3">
           <div className="flex items-center space-x-3">
             <Calendar className="w-5 h-5 text-gray-400" />
