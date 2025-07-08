@@ -1,11 +1,14 @@
 {
   "name": "blacksheeps",
+  "homepage": "https://alinekristina.github.io/blacksheeps",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview",
     "server:build": "tsc --project tsconfig-server.json --outDir dist-server",
@@ -20,6 +23,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.1.0",
     "express": "^5.1.0",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.525.0",
     "mongodb": "^6.17.0",
     "nodemon": "^3.1.10",
