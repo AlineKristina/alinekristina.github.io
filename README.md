@@ -1,4 +1,4 @@
-# Black Sheep Guild - Ragnarok Online Guild Management System
+# BlackSheeps Guild - Ragnarok Online Guild Management System
 
 A modern, responsive Single Page Application (SPA) built for managing Ragnarok Online guild activities. Features a comprehensive event calendar, real-time user tracking, and multiple guild management tools.
 
@@ -247,4 +247,4 @@ This application is designed for guild management in Ragnarok Online, a classic 
 
 ---
 
-**Built with ❤️ for the Black Sheep Guild**
+**Built with ❤️ for the BlackSheeps Guild**

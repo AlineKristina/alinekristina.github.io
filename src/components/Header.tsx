@@ -5,29 +5,33 @@ const Header = () => {
   const { activeUsers, isTracking } = useUserTracking();
 
   return (
-    <header className="bg-gray-800 border-b border-gray-700 py-4">
+    <header className="bg-void-gradient border-b border-sabbath-steel py-6 shadow-2xl">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <Shield className="w-8 h-8 text-red-500" />
+          <div className="flex items-center space-x-4">
+            <Shield className="w-10 h-10 text-sabbath-crimson animate-glow" />
             <div>
-              <h1 className="text-2xl font-bold text-white">Black Sheep Guild</h1>
-              <p className="text-gray-400 text-sm">Ragnarok Online Guild Management</p>
+              <h1 className="text-3xl font-metal font-bold metal-text animate-glow">
+                BlackSheeps Guild
+              </h1>
+              <p className="text-sabbath-silver text-sm font-metal tracking-wider">
+                Ragnarok Online • Masters of Darkness
+              </p>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-gray-300">
-              <Users className="w-5 h-5" />
-              <span className="text-sm">
-                {activeUsers} Member{activeUsers !== 1 ? 's' : ''} Online
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-3 text-sabbath-chrome bg-steel-gradient px-4 py-2 rounded-lg border border-sabbath-iron shadow-lg">
+              <Users className="w-5 h-5 text-sabbath-violet" />
+              <span className="text-sm font-metal font-semibold">
+                {activeUsers} Soul{activeUsers !== 1 ? 's' : ''} Online
                 {!isTracking && (
-                  <span className="text-gray-500 ml-1">(inactive)</span>
+                  <span className="text-sabbath-iron ml-2">(dormant)</span>
                 )}
               </span>
             </div>
-            <div className="flex items-center space-x-2 text-gray-300">
-              <Swords className="w-5 h-5" />
-              <span className="text-sm">Level 50</span>
+            <div className="flex items-center space-x-3 text-sabbath-chrome bg-steel-gradient px-4 py-2 rounded-lg border border-sabbath-iron shadow-lg">
+              <Swords className="w-5 h-5 text-sabbath-crimson" />
+              <span className="text-sm font-metal font-semibold">Darkness Level 50</span>
             </div>
           </div>
         </div>

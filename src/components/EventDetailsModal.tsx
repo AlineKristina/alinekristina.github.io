@@ -37,14 +37,14 @@ export default function EventDetailsModal({
     // Positioned modal relative to clicked event
     <div 
       style={modalStyle}
-      className="bg-gray-800/95 backdrop-blur-sm rounded-lg shadow-2xl w-80 text-white border border-gray-600"
+      className="sabbath-card w-80 text-sabbath-chrome"
     >
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-gray-700">
-        <h2 className="text-lg font-semibold text-white">Event Details</h2>
+      <div className="flex items-center justify-between p-4 border-b border-sabbath-steel">
+        <h2 className="text-lg font-metal font-bold text-sabbath-chrome">Dark Details</h2>
         <button
           onClick={onClose}
-          className="text-gray-400 hover:text-white transition-colors"
+          className="text-sabbath-silver hover:text-sabbath-chrome transition-colors"
         >
           <X className="h-5 w-5" />
         </button>
@@ -64,21 +64,21 @@ export default function EventDetailsModal({
 
         {/* Title */}
         <div>
-          <label className="block text-xs font-medium text-gray-300 mb-1">
-            <Type className="inline h-3 w-3 mr-1" />
+          <label className="block text-xs font-metal font-semibold text-sabbath-silver mb-1">
+            <Type className="inline h-3 w-3 mr-1 text-sabbath-violet" />
             Title
           </label>
-          <h3 className="text-base font-semibold text-white">{event.title}</h3>
+          <h3 className="text-base font-metal font-bold text-sabbath-chrome">{event.title}</h3>
         </div>
 
         {/* Description */}
         {event.description && (
           <div>
-            <label className="block text-xs font-medium text-gray-300 mb-1">
-              <FileText className="inline h-3 w-3 mr-1" />
+            <label className="block text-xs font-metal font-semibold text-sabbath-silver mb-1">
+              <FileText className="inline h-3 w-3 mr-1 text-sabbath-violet" />
               Description
             </label>
-            <p className="text-gray-200 bg-gray-700 p-2 rounded-md text-sm">
+            <p className="text-sabbath-chrome bg-sabbath-coal p-2 rounded-md text-sm border border-sabbath-steel">
               {event.description}
             </p>
           </div>
@@ -86,47 +86,47 @@ export default function EventDetailsModal({
 
         {/* Date */}
         <div>
-          <label className="block text-xs font-medium text-gray-300 mb-1">
-            <Calendar className="inline h-3 w-3 mr-1" />
+          <label className="block text-xs font-metal font-semibold text-sabbath-silver mb-1">
+            <Calendar className="inline h-3 w-3 mr-1 text-sabbath-violet" />
             Date
           </label>
-          <p className="text-white text-sm">{formatDate(eventDate)}</p>
+          <p className="text-sabbath-chrome text-sm font-metal">{formatDate(eventDate)}</p>
         </div>
 
         {/* Time */}
         {event.time && (
           <div>
-            <label className="block text-xs font-medium text-gray-300 mb-1">
-              <Clock className="inline h-3 w-3 mr-1" />
+            <label className="block text-xs font-metal font-semibold text-sabbath-silver mb-1">
+              <Clock className="inline h-3 w-3 mr-1 text-sabbath-violet" />
               Time
             </label>
-            <p className="text-white text-sm">{event.time}</p>
+            <p className="text-sabbath-chrome text-sm font-metal">{event.time}</p>
           </div>
         )}
 
         {/* Created/Updated Info */}
-        <div className="pt-3 border-t border-gray-700">
-          <div className="text-xs text-gray-400 space-y-1">
-            <p>Created: {new Date(event.createdAt).toLocaleString()}</p>
+        <div className="pt-3 border-t border-sabbath-steel">
+          <div className="text-xs text-sabbath-silver space-y-1 font-metal">
+            <p>Summoned: {new Date(event.createdAt).toLocaleString()}</p>
             {event.updatedAt !== event.createdAt && (
-              <p>Updated: {new Date(event.updatedAt).toLocaleString()}</p>
+              <p>Altered: {new Date(event.updatedAt).toLocaleString()}</p>
             )}
           </div>
         </div>
       </div>
 
       {/* Actions */}
-      <div className="flex gap-2 p-4 border-t border-gray-700">
+      <div className="flex gap-2 p-4 border-t border-sabbath-steel">
         <button
           onClick={onClose}
-          className="flex-1 px-3 py-2 text-gray-300 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors text-sm"
+          className="btn-secondary flex-1"
         >
           Close
         </button>
         {onEdit && (
           <button
             onClick={onEdit}
-            className="flex items-center justify-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm"
+            className="flex items-center justify-center px-3 py-2 bg-sabbath-violet hover:bg-sabbath-purple text-sabbath-chrome hover:text-sabbath-blood rounded-md transition-colors text-sm font-metal font-semibold border border-sabbath-steel"
           >
             <Edit className="h-3 w-3 mr-1" />
             Edit
@@ -135,10 +135,10 @@ export default function EventDetailsModal({
         {onDelete && (
           <button
             onClick={onDelete}
-            className="flex items-center justify-center px-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors text-sm"
+            className="btn-primary flex items-center justify-center"
           >
             <Trash2 className="h-3 w-3 mr-1" />
-            Delete
+            Banish
           </button>
         )}
       </div>
@@ -146,13 +146,13 @@ export default function EventDetailsModal({
   ) : (
     // Fallback to fixed position if no position provided
     <div className="fixed inset-0 flex items-start justify-start p-4 z-50 pointer-events-none">
-      <div className="bg-gray-800/95 backdrop-blur-sm rounded-lg shadow-2xl w-full max-w-sm mt-16 text-white border border-gray-600 pointer-events-auto">
+      <div className="sabbath-card w-full max-w-sm mt-16 text-sabbath-chrome pointer-events-auto">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-700">
-          <h2 className="text-lg font-semibold text-white">Event Details</h2>
+        <div className="flex items-center justify-between p-4 border-b border-sabbath-steel">
+          <h2 className="text-lg font-metal font-bold text-sabbath-chrome">Dark Details</h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-white transition-colors"
+            className="text-sabbath-silver hover:text-sabbath-chrome transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
@@ -171,21 +171,21 @@ export default function EventDetailsModal({
 
           {/* Title */}
           <div>
-            <label className="block text-xs font-medium text-gray-300 mb-1">
-              <Type className="inline h-3 w-3 mr-1" />
+            <label className="block text-xs font-metal font-semibold text-sabbath-silver mb-1">
+              <Type className="inline h-3 w-3 mr-1 text-sabbath-violet" />
               Title
             </label>
-            <h3 className="text-base font-semibold text-white">{event.title}</h3>
+            <h3 className="text-base font-metal font-bold text-sabbath-chrome">{event.title}</h3>
           </div>
 
           {/* Description */}
           {event.description && (
             <div>
-              <label className="block text-xs font-medium text-gray-300 mb-1">
-                <FileText className="inline h-3 w-3 mr-1" />
+              <label className="block text-xs font-metal font-semibold text-sabbath-silver mb-1">
+                <FileText className="inline h-3 w-3 mr-1 text-sabbath-violet" />
                 Description
               </label>
-              <p className="text-gray-200 bg-gray-700 p-2 rounded-md text-sm">
+              <p className="text-sabbath-chrome bg-sabbath-coal p-2 rounded-md text-sm border border-sabbath-steel">
                 {event.description}
               </p>
             </div>
@@ -193,47 +193,47 @@ export default function EventDetailsModal({
 
           {/* Date */}
           <div>
-            <label className="block text-xs font-medium text-gray-300 mb-1">
-              <Calendar className="inline h-3 w-3 mr-1" />
+            <label className="block text-xs font-metal font-semibold text-sabbath-silver mb-1">
+              <Calendar className="inline h-3 w-3 mr-1 text-sabbath-violet" />
               Date
             </label>
-            <p className="text-white text-sm">{formatDate(eventDate)}</p>
+            <p className="text-sabbath-chrome text-sm font-metal">{formatDate(eventDate)}</p>
           </div>
 
           {/* Time */}
           {event.time && (
             <div>
-              <label className="block text-xs font-medium text-gray-300 mb-1">
-                <Clock className="inline h-3 w-3 mr-1" />
+              <label className="block text-xs font-metal font-semibold text-sabbath-silver mb-1">
+                <Clock className="inline h-3 w-3 mr-1 text-sabbath-violet" />
                 Time
               </label>
-              <p className="text-white text-sm">{event.time}</p>
+              <p className="text-sabbath-chrome text-sm font-metal">{event.time}</p>
             </div>
           )}
 
           {/* Created/Updated Info */}
-          <div className="pt-3 border-t border-gray-700">
-            <div className="text-xs text-gray-400 space-y-1">
-              <p>Created: {new Date(event.createdAt).toLocaleString()}</p>
+          <div className="pt-3 border-t border-sabbath-steel">
+            <div className="text-xs text-sabbath-silver space-y-1 font-metal">
+              <p>Summoned: {new Date(event.createdAt).toLocaleString()}</p>
               {event.updatedAt !== event.createdAt && (
-                <p>Updated: {new Date(event.updatedAt).toLocaleString()}</p>
+                <p>Altered: {new Date(event.updatedAt).toLocaleString()}</p>
               )}
             </div>
           </div>
         </div>
 
         {/* Actions */}
-        <div className="flex gap-2 p-4 border-t border-gray-700">
+        <div className="flex gap-2 p-4 border-t border-sabbath-steel">
           <button
             onClick={onClose}
-            className="flex-1 px-3 py-2 text-gray-300 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors text-sm"
+            className="btn-secondary flex-1"
           >
             Close
           </button>
           {onEdit && (
             <button
               onClick={onEdit}
-              className="flex items-center justify-center px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm"
+              className="flex items-center justify-center px-3 py-2 bg-sabbath-violet hover:bg-sabbath-purple text-sabbath-chrome hover:text-sabbath-blood rounded-md transition-colors text-sm font-metal font-semibold border border-sabbath-steel"
             >
               <Edit className="h-3 w-3 mr-1" />
               Edit
@@ -242,10 +242,10 @@ export default function EventDetailsModal({
           {onDelete && (
             <button
               onClick={onDelete}
-              className="flex items-center justify-center px-3 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors text-sm"
+              className="btn-primary flex items-center justify-center"
             >
               <Trash2 className="h-3 w-3 mr-1" />
-              Delete
+              Banish
             </button>
           )}
         </div>

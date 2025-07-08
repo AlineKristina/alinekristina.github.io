@@ -14,9 +14,9 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="bg-gray-800 border-b border-gray-700">
+    <nav className="bg-metal-gradient border-b border-sabbath-steel shadow-xl">
       <div className="container mx-auto px-4">
-        <div className="flex space-x-8">
+        <div className="flex space-x-2">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path
             const Icon = item.icon
@@ -25,14 +25,27 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center space-x-2 px-3 py-4 text-sm font-medium transition-colors ${
+                className={`flex items-center space-x-3 px-6 py-4 text-sm font-metal font-semibold transition-all duration-300 relative group ${
                   isActive
-                    ? 'text-red-400 border-b-2 border-red-400'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                    ? 'text-sabbath-chrome bg-steel-gradient border-b-3 border-sabbath-violet shadow-lg'
+                    : 'text-sabbath-silver hover:bg-steel-gradient hover:shadow-md'
                 }`}
               >
-                <Icon className="w-4 h-4" />
-                <span>{item.label}</span>
+                <Icon className={`w-5 h-5 transition-all duration-300 ${
+                  isActive 
+                    ? 'text-sabbath-violet animate-pulse-slow' 
+                    : 'text-sabbath-crimson group-hover:text-sabbath-violet'
+                }`} />
+                <span className={`tracking-wider relative transition-colors duration-300 ${
+                  isActive 
+                    ? '' 
+                    : 'group-hover:text-sabbath-blood'
+                }`}>
+                  {item.label}
+                  {isActive && (
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-sabbath-violet animate-glow"></div>
+                  )}
+                </span>
               </Link>
             )
           })}

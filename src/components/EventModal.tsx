@@ -83,13 +83,13 @@ export default function EventModal({ isOpen, onClose, onSave, selectedDate }: Ev
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
-      <div className="bg-white rounded-lg shadow-2xl w-full max-w-md m-4 pointer-events-auto border border-gray-200">
+      <div className="sabbath-card w-full max-w-md m-4 pointer-events-auto">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900">Create New Event</h2>
+        <div className="flex items-center justify-between p-6 border-b border-sabbath-steel">
+          <h2 className="text-xl font-metal font-bold text-sabbath-chrome">Summon New Event</h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-sabbath-silver hover:text-sabbath-chrome transition-colors"
           >
             <X className="h-6 w-6" />
           </button>
@@ -99,32 +99,32 @@ export default function EventModal({ isOpen, onClose, onSave, selectedDate }: Ev
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {/* Title */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              <Type className="inline h-4 w-4 mr-1" />
+            <label className="block text-sm font-metal font-semibold text-sabbath-chrome mb-2">
+              <Type className="inline h-4 w-4 mr-2 text-sabbath-violet" />
               Title *
             </label>
             <input
               type="text"
               value={formData.title}
               onChange={(e) => handleInputChange('title', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.title ? 'border-red-500' : 'border-gray-300'
+              className={`metal-input w-full ${
+                errors.title ? 'border-sabbath-crimson' : ''
               }`}
               placeholder="Enter event title..."
             />
-            {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
+            {errors.title && <p className="text-sabbath-blood text-sm mt-1 font-metal">{errors.title}</p>}
           </div>
 
           {/* Description */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              <FileText className="inline h-4 w-4 mr-1" />
+            <label className="block text-sm font-metal font-semibold text-sabbath-chrome mb-2">
+              <FileText className="inline h-4 w-4 mr-2 text-sabbath-violet" />
               Description
             </label>
             <textarea
               value={formData.description}
               onChange={(e) => handleInputChange('description', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="metal-input w-full"
               rows={3}
               placeholder="Enter event description..."
             />
@@ -132,73 +132,73 @@ export default function EventModal({ isOpen, onClose, onSave, selectedDate }: Ev
 
           {/* Date */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              <Calendar className="inline h-4 w-4 mr-1" />
+            <label className="block text-sm font-metal font-semibold text-sabbath-chrome mb-2">
+              <Calendar className="inline h-4 w-4 mr-2 text-sabbath-violet" />
               Date *
             </label>
             <input
               type="date"
               value={formData.date}
               onChange={(e) => handleInputChange('date', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.date ? 'border-red-500' : 'border-gray-300'
+              className={`metal-input w-full ${
+                errors.date ? 'border-sabbath-crimson' : ''
               }`}
             />
-            {errors.date && <p className="text-red-500 text-sm mt-1">{errors.date}</p>}
+            {errors.date && <p className="text-sabbath-blood text-sm mt-1 font-metal">{errors.date}</p>}
           </div>
 
           {/* Time */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              <Clock className="inline h-4 w-4 mr-1" />
+            <label className="block text-sm font-metal font-semibold text-sabbath-chrome mb-2">
+              <Clock className="inline h-4 w-4 mr-2 text-sabbath-violet" />
               Time (optional)
             </label>
             <input
               type="time"
               value={formData.time}
               onChange={(e) => handleInputChange('time', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.time ? 'border-red-500' : 'border-gray-300'
+              className={`metal-input w-full ${
+                errors.time ? 'border-sabbath-crimson' : ''
               }`}
             />
-            {errors.time && <p className="text-red-500 text-sm mt-1">{errors.time}</p>}
+            {errors.time && <p className="text-sabbath-blood text-sm mt-1 font-metal">{errors.time}</p>}
           </div>
 
           {/* Event Type */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-metal font-semibold text-sabbath-chrome mb-2">
               Event Type *
             </label>
             <select
               value={formData.type}
               onChange={(e) => handleInputChange('type', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.type ? 'border-red-500' : 'border-gray-300'
+              className={`metal-input w-full ${
+                errors.type ? 'border-sabbath-crimson' : ''
               }`}
             >
               {EVENT_TYPES.map((type) => (
-                <option key={type.id} value={type.id}>
+                <option key={type.id} value={type.id} className="bg-sabbath-coal text-sabbath-chrome">
                   {type.label}
                 </option>
               ))}
             </select>
-            {errors.type && <p className="text-red-500 text-sm mt-1">{errors.type}</p>}
+            {errors.type && <p className="text-sabbath-blood text-sm mt-1 font-metal">{errors.type}</p>}
           </div>
 
           {/* Actions */}
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 pt-6">
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
+              className="btn-secondary flex-1"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors"
+              className="btn-primary flex-1"
             >
-              Create Event
+              Summon Event
             </button>
           </div>
         </form>
